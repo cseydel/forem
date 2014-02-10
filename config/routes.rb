@@ -10,6 +10,7 @@ Forem::Engine.routes.draw do
   namespace :admin do
     root :to => "base#index"
     resources :groups do
+      get :delete, on: :member
       resources :members, only: [:destroy] do
         get :delete, on: :member
         collection do
