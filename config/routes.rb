@@ -11,6 +11,7 @@ Forem::Engine.routes.draw do
     root :to => "base#index"
     resources :groups do
       resources :members, only: [:destroy] do
+        get :delete, on: :member
         collection do
           post :add
         end

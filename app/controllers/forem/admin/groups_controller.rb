@@ -22,6 +22,10 @@ module Forem
         end
       end
 
+      def delete
+        destroy
+      end
+
       def destroy
         @group.destroy
         flash[:notice] = t("forem.admin.group.deleted")
